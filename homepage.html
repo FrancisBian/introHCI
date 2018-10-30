@@ -13,71 +13,133 @@
 </head>
 
 <body>
-  <!--This is the fixed top-->
-  <div class="navbar_top">
-    <a href="#space" style="font-size: 16pt;"></a>
-    <a href="#ourApp" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
-    <a href="#" id="profile_icon">
-      <img src="images/profile.png" height="40" alt="p" />
-    </a>
+	<!--This is the side bar-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" id="close_btn" onclick="closeNav()" >&times;</a>
+		<a href="#" class="thumbnail" style="background-color:transparent;">
+			<img src="images/profile.png" height="200" alt="p" class="img"/>
+			<h1 style="font-size:28pt;">Jay</h1>
+		</a>
+    <a href="#">Settings<hr></a>
+    <a href="#">Help<hr></a>
+    <a href="#">Terms and conditions<hr></a>
+		<a href="#">Log out</a>
   </div>
   <!--END-->
 
-  <!--This is the fixed bottom-->
-  <div class="navbar_bottom">
-    <a href="#home">
-      <img src="images/home.png" height="40" alt="p">
-    </a>
-    <a href="#cook">
-      <img src="images/cook.png" height="42" alt="p">
-    </a>
-    <a href="#kitchen">
-      <img src="images/kitchen.png" height="38" alt="p">
-    </a>
-    <a href="#add">
-      <img src="images/add.png" height="37" alt="p">
-    </a>
-  </div>
-  <!-- END -->
+	<div id="toggle_div">
+  <!--This is the fixed top-->
+	  <div class="navbar_top">
+	    <a href="#space" style="font-size: 16pt;"></a>
+	    <a href="#ourApp" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
+	    <a href="#" id="profile_icon" onclick="openNav()">
+	      <img src="images/profile.png" height="40" alt="p" />
+	    </a>
+	  </div>
+	  <!--END-->
 
-  <!--This is the UNCOMPLETE sidebar-->
-  <!--
-  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-    <a herf="#" class="w3-bar-item w3-button">Link 1</a>
-  </div>
-
-  <script>
-  function w3_open(){
-    document.getElementById("mySidebar".style.display = "block");
-  }
-  function w3_close(){
-    document.getElementById("mySidebar".style.display = "none");
-  }
-  </script>
-  -->
+	  <!--This is the fixed bottom-->
+	  <div class="navbar_bottom">
+	    <a href="#home">
+	      <img src="images/home.png" height="40" alt="p">
+	    </a>
+	    <a href="#cook">
+	      <img src="images/cook.png" height="42" alt="p">
+	    </a>
+	    <a href="#kitchen">
+	      <img src="images/kitchen.png" height="38" alt="p">
+	    </a>
+	    <a href="#add">
+	      <img src="images/add.png" height="37" alt="p">
+	    </a>
+	  </div>
+	  <!-- END -->
 
 
-  <div class="main">
-		<div>
-			<h2>It's a prototype header</h2>
-			<p>text &middot; text &middot; text</p>
-			<button id="testjs" class="btn btn-primary btn-lg">Test button</button>
-		</div>
+	  <div class="main">
+			<div class="homepage_recipes">
+				<h4 style="font-size:20;margin-left:20px;margin-bottom:4px;">Past recipes:</h4>
+				<div class="scrolling-wrapper-flexbox">
+		    	<div class="card">
+						<img src="images/fake_chicken_noodle_soup.png" height="130" alt="p">
+						<p>chicken noodle soup</p>
+					</div>
+		    	<div class="card">
+						<img src="images/fake_lasagna.png" height="130" alt="p">
+						<p>lasagna</p>
+					</div>
+		    	<div class="card">
+						<img src="images/fake_dumplings.png" height="130" alt="p">
+						<p>dumplings</p></div>
+		    	<div class="card">
+						<img src="images/fake_fried_rice.png" height="130" alt="p">
+						<p>friced rice</p>
+					</div>
+		    	<div class="card">
+						<img src="images/add_without_text.png" height="50" alt="p">
+					</div>
+	  		</div>
+			</div>
 
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		<div class="project" id="project1">
-			<a href="" class="thumbnail">
-				<img src="images/lorempixel.people.1.jpeg" alt="Test image" class="img">
-				<p>Text here...</p>
-			</a>
-		</div>
+			<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+			<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
+			<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+			<div class="homepage_recipes">
+				<h4 style="font-size:20;margin-left:20px;margin-bottom:0px;">Recipes to try:</h4>
+			</div>
+			<div style="background-color:white;">
+				<div class="project">
+					<h style="font-size:5px;">&emsp;</h>
+				</div>
+				<div class="project" id="project1">
+					<a href="" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+						<img src="images/fake_Spaghetti_and_Meatballs.png" alt="Test image" class="img">
+					</a>
+				</div>
 
+		    <div class="project" id="project2">
+					<a href="" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+						<img src="images/fake_Chicken_and_Broccoli.png" alt="Test image" class="img">
+					</a>
+				</div>
 
+		    <div class="project" id="project3">
+					<a href="" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+						<img src="images/fake_Lemon_Rosemary_Chicken.png" alt="Test image" class="img">
+					</a>
+				</div>
 
+		    <div class="project" id="project4">
+					<a href="" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+						<img src="images/fake_Cauliflower_Breadsticks.png" alt="Test image" class="img">
+					</a>
+				</div>
+
+		    <div class="project" id="project5">
+					<a href="" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+						<img src="images/fake_Spicy_Buffalo_Tacos.png" alt="Test image" class="img">
+					</a>
+				</div>
+			</div>
+	  </div>
+	</div>
   <!-- include JavaScript near the end of the HTML file -->
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "30%";
+			dim(true);
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			dim(false);
+		}
+
+		function dim(bool) {
+			if(typeof bool=='undefined') bool=true;
+			document.getElementById('toggle_div').style.opacity=(bool?0.5:1);
+		}
+	</script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

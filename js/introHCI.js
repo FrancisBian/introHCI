@@ -10,7 +10,6 @@ function initializePage() {
 	$("#testjs").click(function(e) {
 		$('.jumbotron h2').text("Javascript is connected");
 	});
-
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }
