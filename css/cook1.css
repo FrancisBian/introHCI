@@ -16,8 +16,12 @@
 	top: 180px;
 }
 
-.description{
+.description {
 	position: absolute;
 	left: 90px;
 	top: 360px;
+}
+
+.cookmain {
+	background-color: rgb(203, 176, 131);
 }
