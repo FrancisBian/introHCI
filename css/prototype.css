@@ -164,3 +164,28 @@ body {
   color: inherit;
   background-color: #f4ecd6;
 }
+
+#make_button{
+	width: 70px;
+  height: 70px;
+	z-index: 1;
+	position: fixed;
+  bottom: 55px;
+  right: 5px;
+}
+
+#edit_button{
+	z-index: 1;
+	position: fixed;
+	bottom: 55px;
+	right: 5px;
+}
+
+#share_button{
+	width: 55px;
+	height: 55px;
+	z-index: 1;
+	position: fixed;
+	bottom: 55px;
+	right: 0px;
+}
