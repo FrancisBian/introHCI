@@ -20,7 +20,7 @@
 			<img src="images/profile.png" height="200" alt="p" class="img"/>
 			<h1 style="font-size:28pt;">Jay</h1>
 		</a>
-    <a href="#">Settings<hr></a>
+    <a href="#" id="setting">Settings<hr></a>
     <a href="#">Help<hr></a>
     <a href="#">Terms and conditions<hr></a>
 		<a href="#">Log out</a>
@@ -31,7 +31,7 @@
   <!--This is the fixed top-->
 	  <div class="navbar_top">
 	    <a href="#space" style="font-size: 16pt;"></a>
-	    <a href="#ourApp" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
+	    <a href="#ourApp" id="homepage_title" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
 	    <a href="#" id="profile_icon" onclick="openNav()">
 	      <img src="images/profile.png" height="40" alt="p" />
 	    </a>
@@ -60,25 +60,26 @@
 			<div class="homepage_recipes">
 				<h4 style="font-size:20;margin-left:20px;margin-bottom:4px;">Past recipes:</h4>
 				<div class="scrolling-wrapper-flexbox">
-		    	<div href="recipe.html" class="card">
-						<a href="recipe.html">
+		    	<div class="card">
+						<a href="recipe.html?id=0" id="chicken_noodle_soup">
 							<img src="images/fake_chicken_noodle_soup.png" height="130" alt="p">
-							<p>chicken noodle soup</p>
+							<p >chicken noodle soup</p>
 						</a>
 					</div>
-					<div href="recipe.html" class="card">
-						<a href="recipe.html">
+					<div class="card">
+						<a href="recipe.html?id=1" id="lasagna">
 							<img src="images/fake_lasagna.png" height="130" alt="p">
 							<p>lasagna</p>
 						</a>
 					</div>
-		    	<div href="recipe.html" class="card">
-						<a href="recipe.html">
+		    	<div class="card" id="dumplings">
+						<a href="recipe.html?id=2">
 							<img src="images/fake_dumplings.png" height="130" alt="p">
-							<p>dumplings</p></div>
+							<p>dumplings</p>
 						</a>
+					</div>
 		    	<div class="card">
-						<a href="recipe.html">
+						<a href="recipe.html?id=3" id="fried rice" >
 							<img src="images/fake_fried_rice.png" height="130" alt="p">
 							<p>friced rice</p>
 						</a>
@@ -96,7 +97,7 @@
 			<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 			<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:20px;margin-bottom:0px;">Recipes to try:</h4>
+				<h4 style="font-size:20;margin-left:20px;margin-bottom:0px; margin-top:0px">Recipes to try:</h4>
 			</div>
 			<div style="background-color:white;">
 				<div class="project">
@@ -150,9 +151,12 @@
 			if(typeof bool=='undefined') bool=true;
 			document.getElementById('toggle_div').style.opacity=(bool?0.5:1);
 		}
+
+		function check(){
+			$('#homepage_title').html("here");
+		}
 	</script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/prototype.js"></script>
 </body>
 </html>
