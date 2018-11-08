@@ -1,5 +1,6 @@
 $(document).ready(function() {
   chosenIng = JSON.parse(localStorage.getItem('currentIng'));
+  var recipeData = JSON.parse(localStorage.getItem('recipeData'));
   console.log(chosenIng);
   var dict = {};
   for(var i = 0; i < recipeData.length; i ++){
@@ -32,6 +33,16 @@ $(document).ready(function() {
     }
   }
   console.log(recipe_idx);
+  if(recipe_idx.length<1){
+    var div = document.createElement('div');
+    div.setAttribute('class', 'container');
+    div.innerHTML = "No recipe found, please try other ingredients.";
+    document.getElementById("container").appendChild(div);
+    var div = document.createElement('div');
+    div.setAttribute('class', 'container');
+    div.innerHTML = "<a id='back_button' href='cookusekitchenfood.html'>Go back</a>";
+    document.getElementById("container").appendChild(div);
+  }
 
   var source = $('#recipe-template').html();
   var template = Handlebars.compile(source);

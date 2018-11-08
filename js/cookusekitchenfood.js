@@ -3,6 +3,7 @@ $(document).ready(function() {
   var source = $('#list-template').html();
   var template = Handlebars.compile(source);
   var parentDiv = $("#food_list");
+  var myKitchen = JSON.parse(localStorage.getItem('myKitchen'));
 
   for(var i = 0; i < myKitchen.length; i++){
     var curData = myKitchen[i];

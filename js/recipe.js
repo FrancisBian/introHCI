@@ -1,12 +1,11 @@
 // Call this function when the page loads (the jQuery "ready" event)
 var recipeID = -1;
 favList = JSON.parse(localStorage.getItem('favData'));
+var recipeData = JSON.parse(localStorage.getItem('recipeData'));
 $(document).ready(function() {
-	console.log(myKitchen);
 	var queryParams = new URLSearchParams(window.location.search);
 	recipeID = queryParams.get('id');
 	console.log('query for recipe #', recipeID);
-
 	for(var i = 0; i < recipeData.length; i++){
 		var curData = recipeData[i];
 		if(curData.id == recipeID){
