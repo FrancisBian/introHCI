@@ -43,7 +43,7 @@
     	<div class="row" id="row">
 				<div class="btn-group btn-group-justified">
 			  	<a href="#" class="btn btn-primary">category</a>
-			  	<a href="#" class="btn btn-primary">view all</a>
+			  	<a href="#" class="btn btn-primary" onclick="viewAll()">view all</a>
 				</div>
 
 				<button type="button" class="btn" id="edit_button">edit</button>
@@ -69,10 +69,8 @@
 
 	<script>
 		function viewAll(){
-			var panelHeading = document.getElementsByClassName('panel-heading'), i;
-			for (var i = 0; i < panelHeading.length; i ++) {
-			    panelHeading[i].style.display = 'none';
-			}
+			var element = document.getElementById('collapse.');
+			element.className="panel-collapse collapse in";
 		}
 	</script>
 

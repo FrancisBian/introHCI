@@ -58,38 +58,16 @@
 
 	  <div class="main">
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:20px;margin-bottom:4px;">Past recipes:</h4>
-				<div class="scrolling-wrapper-flexbox">
-		    	<div class="card">
-						<a href="recipe.html?id=0" id="chicken_noodle_soup">
-							<img src="images/fake_chicken_noodle_soup.png" height="130" alt="p">
-							<p >chicken noodle soup</p>
-						</a>
-					</div>
-					<div class="card">
-						<a href="recipe.html?id=1" id="lasagna">
-							<img src="images/fake_lasagna.png" height="130" alt="p">
-							<p>lasagna</p>
-						</a>
-					</div>
-		    	<div class="card" id="dumplings">
-						<a href="recipe.html?id=2">
-							<img src="images/fake_dumplings.png" height="130" alt="p">
-							<p>dumplings</p>
-						</a>
-					</div>
-		    	<div class="card">
-						<a href="recipe.html?id=3" id="fried rice" >
-							<img src="images/fake_fried_rice.png" height="130" alt="p">
-							<p>friced rice</p>
-						</a>
-					</div>
+				<h4 style="font-size:20;margin-left:10px;margin-bottom:8px;">Favorite recipes:</h4>
+				<div class="scrolling-wrapper-flexbox" id="bar">
+
 		    	<div class="card">
 						<a href="cook1.html">
 							<img src="images/add_without_text.png" height="80" alt="p" style="margin-top:20px;">
 							<p>Cook now!</p>
 						</a>
 					</div>
+
 	  		</div>
 			</div>
 
@@ -97,7 +75,7 @@
 			<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 			<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:20px;margin-bottom:0px; margin-top:0px">Recipes to try:</h4>
+				<h4 style="font-size:20;margin-left:10px;margin-bottom:0px; margin-top:0px">Recipes to try:</h4>
 			</div>
 			<div style="background-color:white;">
 				<div class="project">
@@ -156,7 +134,20 @@
 			$('#homepage_title').html("here");
 		}
 	</script>
+
+	<script id="favorite-template" type="text/x-handlebars-template">
+		<div class="card">
+			<a href="recipe.html?id={{id}}" id="favorite_food">
+				<img src="{{pic}}" height="130" alt="p">
+				<p >{{name}}</p>
+			</a>
+		</div>
+	</script>
+
+	<script src="js/handlebar.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/homepage.js"></script>
 </body>
 </html>

@@ -12,3 +12,10 @@ var recipeData = [
 	{'id': 2, 'name': 'dumplings', 'pic': 'images/fake_dumplings.png', 'category': ['pork'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'},
 	{'id': 3, 'name': 'fried rice', 'pic': 'images/fake_fried_rice.png', 'category': ['rice', 'carrot', 'egg'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'}
 ]
+
+var myFavorite = [
+  recipeData[0],
+  recipeData[1],
+  recipeData[2],
+  recipeData[3]
+]
