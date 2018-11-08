@@ -1,9 +1,11 @@
 // Call this function when the page loads (the jQuery "ready" event)
+var recipeID = -1;
+favList = JSON.parse(localStorage.getItem('favData'));
 $(document).ready(function() {
 	console.log(myKitchen);
 	var queryParams = new URLSearchParams(window.location.search);
-	var recipeID = queryParams.get('id');
-	console.log('query for recipe ', recipeID);
+	recipeID = queryParams.get('id');
+	console.log('query for recipe #', recipeID);
 
 	for(var i = 0; i < recipeData.length; i++){
 		var curData = recipeData[i];
@@ -19,4 +21,31 @@ $(document).ready(function() {
 			document.getElementById("servingSize").textContent="Serving size: "+curData.servingSize;
 		}
 	}
+
+	for(var i = 0; i < favList.length; i++){
+		if(favList[i]['id'] == recipeID ){
+			$(".star.glyphicon").toggleClass("glyphicon-star glyphicon-star-empty");
+			console.log("Find this in favorite");
+		}
+	}
 })
+
+$(".star.glyphicon").click(function() {
+  $(this).toggleClass("glyphicon-star glyphicon-star-empty");
+	if(this.className == "star glyphicon glyphicon-star"){
+		favList.push(recipeData[recipeID]);
+		console.log("here1 "+favList.length);
+	}
+	else{
+		for(var i = 0; i < favList.length; i++){
+			if(favList[i]['id'] == recipeID){
+				favList.splice(i,1);
+			}
+			console.log("here2 "+favList.length);
+		}
+	}
+	for(var i = 0; i < favList.length; i++){
+		console.log(favList[i]['name']);
+	}
+	localStorage.setItem('favData',JSON.stringify(favList));
+});

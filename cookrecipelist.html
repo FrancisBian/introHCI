@@ -39,30 +39,26 @@
 
   <div class="main">
     <!--Recipe page title-->
-    <div class="container">
-    	<h3>Recipes:</h3>
-			<ul class="list-group list-group-flush">
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-			<li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-			<li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-		  <li class="list-group-item"><a href="recipe.html" class="btn btn-primary">Recipe</a></li>
-			</ul>
+    <div id="container">
+    	<h3 style="margin-left:20px;margin-top:60px;margin-bottom:10px;">Recipes:</h3>
+
 		</div>
-    </div>
+  </div>
 
-
+	<script id="recipe-template" type="text/x-handlebars-template">
+		<div style="position: relative;text-align: center;color: white;">
+			<a href="recipe.html?id={{id}}" class="thumbnail" style="width: 100%;height: 75px; overflow: hidden;">
+				<img src="{{pic}}" alt="Test image" class="img" style="width: 110%; height:300px; margin: -80px 0 0 0; opacity: 0.6;filter: alpha(opacity=50);">
+				<p style="position: absolute;top: 50%;left: 50%; transform: translate(-50%, -50%); font-size:20px;color:black;">{{name}}</p>
+			</a>
+		</div>
+	</script>
 
   <!-- include JavaScript near the end of the HTML file -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-  <script src="js/introHCI.js"></script>
+  <script src="js/database.js"></script>
+	<script src="js/handlebar.js"></script>
+	<script src="js/cookrecipelist.js"></script>
 </body>
 </html>
