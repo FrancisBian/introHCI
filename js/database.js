@@ -7,10 +7,10 @@ var myKitchen = [
 ]
 
 var recipeData = [
-	{'id': 0, 'name': 'chicken noodle soup', 'pic': 'images/fake_chicken_noodle_soup.png', 'category': ['chicken', 'carrot', 'noodle'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'},
-	{'id': 1, 'name': 'lasagna', 'pic': 'images/fake_lasagna.png', 'category': ['noodle', 'cheese'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'},
-	{'id': 2, 'name': 'dumplings', 'pic': 'images/fake_dumplings.png', 'category': ['pork'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'},
-	{'id': 3, 'name': 'fried rice', 'pic': 'images/fake_fried_rice.png', 'category': ['rice', 'carrot', 'egg'], 'description': 'It is a description of this recipe', 'instructions':'Here should be the instructions of the recipe'}
+	{'id': 0, 'name': 'chicken noodle soup', 'pic': 'images/fake_chicken_noodle_soup.png', 'category': ['chicken', 'carrot', 'noodle'], 'ingredients': ['3 A', '3 B', '3 C'], 'calories':0, 'servingSize': 0,'instructions':'Here should be the instructions of the recipe'},
+	{'id': 1, 'name': 'lasagna', 'pic': 'images/fake_lasagna.png', 'category': ['noodle', 'cheese'], 'ingredients': ['3 A', '3 B', '3 C'], 'calories':0, 'servingSize': 0, 'instructions':'Here should be the instructions of the recipe'},
+	{'id': 2, 'name': 'dumplings', 'pic': 'images/fake_dumplings.png', 'category': ['pork'], 'ingredients': ['3 A', '3 B', '3 C'], 'calories':0, 'servingSize': 0, 'instructions':'Here should be the instructions of the recipe'},
+	{'id': 3, 'name': 'fried rice', 'pic': 'images/fake_fried_rice.png', 'category': ['rice', 'carrot', 'egg'], 'ingredients': ['3 A', '3 B', '3 C'], 'calories':0, 'servingSize': 0, 'instructions':'Here should be the instructions of the recipe'}
 ]
 
 var myFavorite = [
@@ -19,3 +19,5 @@ var myFavorite = [
   recipeData[2],
   recipeData[3]
 ]
+
+var currentIng = [];

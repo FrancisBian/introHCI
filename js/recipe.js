@@ -10,11 +10,13 @@ $(document).ready(function() {
 		if(curData.id == recipeID){
 			document.getElementById("recipeimg").src=curData.pic;
 			document.getElementById("recipeName").textContent=curData.name;
-			document.getElementById("description").textContent=curData.description;
-			document.getElementById("catlg1").textContent=curData.category[0];
-			document.getElementById("catlg2").textContent=curData.category[1];
-			document.getElementById("catlg3").textContent=curData.category[2];
+			document.getElementById("ingredient1").textContent=curData.ingredients[0];
+			document.getElementById("ingredient2").textContent=curData.ingredients[1];
+			document.getElementById("ingredient3").textContent=curData.ingredients[2];
 			document.getElementById("instruction").textContent=curData.instructions;
+			document.getElementById("categories").textContent=curData.category;
+			document.getElementById("calories").textContent="Calories: "+curData.calories;
+			document.getElementById("servingSize").textContent="Serving size: "+curData.servingSize;
 		}
 	}
 })

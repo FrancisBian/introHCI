@@ -42,7 +42,7 @@
     <div class="container">
     	<div class="row" id="row">
 				<div class="btn-group btn-group-justified">
-			  	<a href="#" class="btn btn-primary">category</a>
+			  	<a href="#" class="btn btn-primary" onclick="collapse()">category</a>
 			  	<a href="#" class="btn btn-primary" onclick="viewAll()">view all</a>
 				</div>
 
@@ -69,8 +69,15 @@
 
 	<script>
 		function viewAll(){
-			var element = document.getElementById('collapse.');
-			element.className="panel-collapse collapse in";
+			$('div[id^="collapse"]').filter(function(){
+				this.className = "panel-collapse collapse in";
+			})
+		}
+
+		function collapse(){
+			$('div[id^="collapse"]').filter(function(){
+				this.className = "panel-collapse collapse";
+			})
 		}
 	</script>
 
