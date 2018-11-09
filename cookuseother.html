@@ -42,33 +42,72 @@
   <div class="main">
     <!--Recipe page title-->
     <div class="container">
+
     	<h3>Other Ingredients:</h3>
 			<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Add food from my kitchen</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
-      <li class="list-group-item">Ingredient</li>
+			<a href="" id = "addkitchenfood" class="list-group-item">Add food from my kitchen</a>
 			</ul>
 
-      <a href="cookrecipelist.html">
+			<form>
+				Ingredient 1:<br>
+				<input type = "text" id="ingr1" <br><br>
+				Ingredient 2:<br>
+				<input type = "text" id="ingr2"<br><br>
+				Ingredient 3:<br>
+				<input type = "text" id="ingr3"<br><br>
+				Ingredient 4:<br>
+				<input type = "text" id="ingr4"<br><br>
+				Ingredient 5:<br>
+				<input type = "text" id="ingr5"<br><br>
+				Ingredient 6:<br>
+				<input type = "text" id="ingr6"<br><br>
+				Ingredient 7:<br>
+				<input type = "text" id="ingr7"<br><br>
+				Ingredient 8:<br>
+				<input type = "text" id="ingr8"<br><br>
+				Ingredient 9:<br>
+				<input type = "text" id="ingr9"<br><br>
+				Ingredient 10:<br>
+				<input type = "text" id="ingr10"<br><br><br>
+			</form>
+
+      <a href = "#">
 				<img src="images/make.png" alt="make food" id="make_button">
 			</a>
 		</div>
     </div>
 
 
-
   <!-- include JavaScript near the end of the HTML file -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-  <script src="js/introHCI.js"></script>
+
+	<script>
+		$('#make_button').click(makefood);
+		var currentIng = [];
+		function makefood(event)
+		{
+			currentIng = [];
+			for (var i = 1; i < 11; i++) {
+				if (document.getElementById("ingr"+i)!=null) {
+					if (document.getElementById("ingr"+i).value != "") {
+						var ingredient = document.getElementById("ingr"+i).value;
+						currentIng.push(ingredient)
+					}
+				}
+			}
+
+			if(currentIng.length == 0){
+				alert("Please choose at least one ingredient!");
+			}
+			else{
+				window.location.href = "cookrecipelist.html";
+			}
+			localStorage.setItem('currentIng',JSON.stringify(currentIng));
+		}
+
+	</script>
+
+
 </body>
 </html>

@@ -4,6 +4,7 @@ body {
 		 background-color: #f4ecd6;
 }
 
+
 .navbar_top {
 	z-index: 1;
 	display:flex;
@@ -142,13 +143,14 @@ body {
   display:flex;
   flex-wrap: nowrap;
   overflow-x:auto;
+	background: white;
 }
 
 .card {
-  border: 3px solid #f4ecd6;
+  border: 3px solid white;
   width: 150px;
   height: 150px;
-  background: #f4ecd6;
+  background: white;
 	font-size: 10;
 	text-align: center;
 	align-content: center;
@@ -188,4 +190,12 @@ body {
 	position: fixed;
 	bottom: 55px;
 	right: 0px;
+}
+
+.star {
+  font-size: 25px;
+	color:gold;
+	float: right;
+	margin-right:15px;
+	margin-top: 30px;
 }

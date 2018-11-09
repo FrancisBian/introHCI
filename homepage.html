@@ -18,12 +18,12 @@
     <a href="javascript:void(0)" id="close_btn" onclick="closeNav()" >&times;</a>
 		<a href="#" class="thumbnail" style="background-color:transparent;">
 			<img src="images/profile.png" height="200" alt="p" class="img"/>
-			<h1 style="font-size:28pt;">Jay</h1>
+			<p id="myusername" style="font-size:28pt;overflow:scroll">Jay</p>
 		</a>
-    <a href="#">Settings<hr></a>
-    <a href="#">Help<hr></a>
-    <a href="#">Terms and conditions<hr></a>
-		<a href="#">Log out</a>
+    <a href="settings.html" id="setting">Settings<hr></a>
+    <a href="help.html">Help<hr></a>
+    <a href="terms.html">Terms and conditions<hr></a>
+		<a href="login.html" onclick="logout()">Log out</a>
   </div>
   <!--END-->
 
@@ -31,7 +31,7 @@
   <!--This is the fixed top-->
 	  <div class="navbar_top">
 	    <a href="#space" style="font-size: 16pt;"></a>
-	    <a href="#ourApp" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
+	    <a href="#ourApp" id="homepage_title" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
 	    <a href="#" id="profile_icon" onclick="openNav()">
 	      <img src="images/profile.png" height="40" alt="p" />
 	    </a>
@@ -58,37 +58,16 @@
 
 	  <div class="main">
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:20px;margin-bottom:4px;">Past recipes:</h4>
-				<div class="scrolling-wrapper-flexbox">
-		    	<div href="recipe.html" class="card">
-						<a href="recipe.html">
-							<img src="images/fake_chicken_noodle_soup.png" height="130" alt="p">
-							<p>chicken noodle soup</p>
-						</a>
-					</div>
-					<div href="recipe.html" class="card">
-						<a href="recipe.html">
-							<img src="images/fake_lasagna.png" height="130" alt="p">
-							<p>lasagna</p>
-						</a>
-					</div>
-		    	<div href="recipe.html" class="card">
-						<a href="recipe.html">
-							<img src="images/fake_dumplings.png" height="130" alt="p">
-							<p>dumplings</p></div>
-						</a>
-		    	<div class="card">
-						<a href="recipe.html">
-							<img src="images/fake_fried_rice.png" height="130" alt="p">
-							<p>friced rice</p>
-						</a>
-					</div>
+				<h4 style="font-size:20;margin-left:10px;margin-bottom:8px;">Favorite recipes:</h4>
+				<div class="scrolling-wrapper-flexbox" id="bar">
+
 		    	<div class="card">
 						<a href="cook1.html">
 							<img src="images/add_without_text.png" height="80" alt="p" style="margin-top:20px;">
 							<p>Cook now!</p>
 						</a>
 					</div>
+
 	  		</div>
 			</div>
 
@@ -96,14 +75,14 @@
 			<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 			<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:20px;margin-bottom:0px;">Recipes to try:</h4>
+				<h4 style="font-size:20;margin-left:10px;margin-bottom:0px; margin-top:0px">Recipes to try:</h4>
 			</div>
 			<div style="background-color:white;">
 				<div class="project">
 					<h style="font-size:5px;">&emsp;</h>
 				</div>
 				<div class="project" id="project1">
-					<a href="recipe.html" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
+					<a href="recipe.html?id=4" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
 						<img src="images/fake_Spaghetti_and_Meatballs.png" alt="Test image" class="img">
 					</a>
 				</div>
@@ -150,9 +129,29 @@
 			if(typeof bool=='undefined') bool=true;
 			document.getElementById('toggle_div').style.opacity=(bool?0.5:1);
 		}
+
+		function check(){
+			$('#homepage_title').html("here");
+		}
+
+		function logout(){
+			localStorage.clear();
+		}
 	</script>
+
+	<script id="favorite-template" type="text/x-handlebars-template">
+		<div class="card">
+			<a href="recipe.html?id={{id}}" id="favorite_food">
+				<img src="{{pic}}" height="130" alt="p">
+				<p >{{name}}</p>
+			</a>
+		</div>
+	</script>
+
+	<script src="js/handlebar.js"></script>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/prototype.js"></script>
+	<script src="js/homepage.js"></script>
+	<script src="js/login.js"></script>
 </body>
 </html>
