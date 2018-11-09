@@ -40,7 +40,7 @@ $(document).ready(function() {
     document.getElementById("container").appendChild(div);
     var div = document.createElement('div');
     div.setAttribute('class', 'container');
-    div.innerHTML = "<a id='back_button' href='cookusekitchenfood.html'>Go back</a>";
+    div.innerHTML = "<a id='back_button' href='cook1.html'>Go back</a>";
     document.getElementById("container").appendChild(div);
   }
 
