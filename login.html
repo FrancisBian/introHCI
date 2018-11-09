@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>JAY's prototype</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/prototype.css" rel="stylesheet">
+	<script src="js/login.js"></script>
+	<!-- this is a comment in HTML -->
+</head>
+
+
+<body>
+	<div class="col">
+		<div class="container">
+			<h1>Welcome to Our App<h1>
+		</div>
+	<div class="container row-1">
+  <form id="loginform" action="/action_page.php">
+    <div class="form-group">
+      <label for="login">Login:</label>
+      <input type="name" class="form-control" id="username" value = "testUser" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="password" value = "testPass" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+
+		<a type="submit" id="submit" class="btn btn-default" onclick="loginFunction();">Submit
+		</a>
+  </form>
+	<button type="newaccount" class="btn btn-default">Create new account</button>
+</div>
+
+</div>
+
+  <!-- include JavaScript near the end of the HTML file -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
