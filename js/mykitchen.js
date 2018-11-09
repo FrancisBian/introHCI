@@ -12,16 +12,14 @@ $(document).ready(function() {
     for(var j = 0; j < curData['items'].length; j++){
       var div = document.createElement('div');
       div.setAttribute('class', 'panel-body');
-      var innerDiv = document.createElement('div');
-      innerDiv.setAttribute('class','cross');
-      innerDiv.innerHTML = "<a style='color:black;float:right;'>&#x2715;</a>"+curData['items'][j];
-      div.append(innerDiv);
-      document.getElementById("collapse"+i).appendChild(div)
+      div.innerHTML = "<a style='color:black;float:right;' class='cross'>&#x2715</a>"+curData['items'][j];
+      document.getElementById("collapse"+i).appendChild(div);
     }
   }
-})
 
-$('.cross').click(function() {
-  $(this).parent().remove();
-  console.log($(this).parent());
-});
+  $('.cross').click(function() {
+    var ss = $(this).val();
+    console.log(ss);
+    /*$(this).parent().remove();*/
+  });
+})
