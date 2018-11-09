@@ -23,7 +23,7 @@
     <a href="settings.html" id="setting">Settings<hr></a>
     <a href="help.html">Help<hr></a>
     <a href="terms.html">Terms and conditions<hr></a>
-		<a href="login.html">Log out</a>
+		<a href="login.html" onclick="logout()">Log out</a>
   </div>
   <!--END-->
 
@@ -132,6 +132,10 @@
 
 		function check(){
 			$('#homepage_title').html("here");
+		}
+
+		function logout(){
+			localStorage.clear();
 		}
 	</script>
 
