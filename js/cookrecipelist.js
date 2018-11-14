@@ -3,6 +3,10 @@ var recipeData = JSON.parse(localStorage.getItem('recipeData'));
 $(document).ready(function() {
   var queryParams = new URLSearchParams(window.location.search);
 	id = queryParams.get('id');
+  add = queryParams.get('add');
+  var backAdd = JSON.parse(localStorage.getItem('address'));
+  $("#back").attr("href", backAdd);
+
   if(id == 2){
     byCalory();
   }

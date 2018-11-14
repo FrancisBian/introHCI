@@ -44,9 +44,6 @@
     <div class="container">
 
     	<h3>Other Ingredients:</h3>
-			<ul class="list-group list-group-flush">
-			<a href="" id = "addkitchenfood" class="list-group-item">Add food from my kitchen</a>
-			</ul>
 
 			<form>
 				Ingredient 1:<br>
@@ -102,6 +99,7 @@
 			}
 			else{
 				window.location.href = "cookrecipelist.html";
+				localStorage.setItem('address',JSON.stringify("cookuseother.html"));
 			}
 			localStorage.setItem('currentIng',JSON.stringify(currentIng));
 		}
