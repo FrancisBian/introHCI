@@ -1,7 +1,5 @@
 // Call this function when the page loads (the jQuery "ready" event)
 $(document).ready(function() {
-  var queryParams = new URLSearchParams(window.location.search);
-	val = queryParams.get('val');
   var source = $('#favorite-template').html();
   var template = Handlebars.compile(source);
   var parentDiv = $("#bar");
@@ -31,8 +29,10 @@ $(document).ready(function() {
       i++;
     }
   }
-  if(val == 'first'){
-    alert("Quick Start: \n- View your saved recipes on the homepage\n- Use 'cook' to find recipes based on ingredients you have\n- Use 'my kitchen' to keep track of what food you have\n- Use 'add food' to add new ingredients to your kitchen\n\nEnjoy!")
+  val = JSON.parse(localStorage.getItem('firstLogin'));
+  if(val == "1"){
+    alert("Quick Start: \n- View your saved recipes on the homepage\n- Use 'cook' to find recipes based on ingredients you have\n- Use 'my kitchen' to keep track of what food you have\n- Use 'add food' to add new ingredients to your kitchen\n\nEnjoy!");
+    localStorage.setItem('firstLogin', JSON.stringify("0"));
   }
 })
 

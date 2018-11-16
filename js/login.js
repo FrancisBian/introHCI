@@ -74,5 +74,6 @@ function loginFunction() {
     localStorage.setItem('favData',JSON.stringify(myFavorite));
     localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
     localStorage.setItem('recipeData', JSON.stringify(recipeData));
-    window.location = "homepage.html?val=first";
+    localStorage.setItem('firstLogin', JSON.stringify("1"));
+    window.location = "homepage.html?";
 }
