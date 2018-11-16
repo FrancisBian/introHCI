@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href = "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel = "stylesheet">
+	<link href = "https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel = "stylesheet">
 	<link href="css/prototype.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 </head>
@@ -88,10 +88,43 @@
         </p>
       </div>
 
-			<img src="images/share button.png" alt="make food" id="share_button">
+			<a href = "#" id = "share" onclick="openNav()">
+				<img src="images/share button.png" alt="make food" id="share_button">
+			</a>
+
+
+			<div id="sharepage" class="sharenav">
+				<a href="javascript:void(0)" id="close_btn" onclick="closeNav()" >&times;</a><br>
+				<input type="checkbox" name="Facebook" value="Facebook"> Share to Facebook<br>
+				<input type="checkbox" name="Instagram" value="Instagram"> Share to Instagram<br>
+				<input type="checkbox" name="Twitter" value="Twitter"> Share to Twitter<br><br>
+				<button onclick = "submit()"> select </button>
+
+		  </div>
+
   <!-- include JavaScript near the end of the HTML file -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
   <script src="js/recipe.js"></script>
+
+<script>
+	function openNav() {
+		document.getElementById("sharepage").style.width = "50%";
+		dim(true);
+	}
+	function dim(bool) {
+		if(typeof bool=='undefined') bool=true;
+		document.getElementById('toggle_div').style.opacity=(bool?0.5:1);
+	}
+	function closeNav() {
+		document.getElementById("sharepage").style.width = "0";
+		dim(false);
+	}
+	function submit() {
+		alert("Successfully shared!");
+		closeNav();
+	}
+</script>
+
 </body>
 </html>

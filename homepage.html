@@ -31,7 +31,7 @@
   <!--This is the fixed top-->
 	  <div class="navbar_top">
 	    <a href="#space" style="font-size: 16pt;"></a>
-	    <a href="#ourApp" id="homepage_title" style="font-size: 16pt;background: none;">&emsp;&emsp;Our App</a>
+	    <a href="#ourApp" id="homepage_title" style="font-size: 16pt;background: none;">&emsp;&emsp;JAY</a>
 	    <a href="#" id="profile_icon" onclick="openNav()">
 	      <img src="images/profile.png" height="40" alt="p" />
 	    </a>
@@ -75,41 +75,9 @@
 			<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 			<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 			<div class="homepage_recipes">
-				<h4 style="font-size:20;margin-left:10px;margin-bottom:0px; margin-top:0px">Recipes to try:</h4>
+				<h4 style="font-size:20;margin-left:10px;margin-bottom:5px; margin-top:0px">Recipes to try:</h4>
 			</div>
-			<div style="background-color:white;">
-				<div class="project">
-					<h style="font-size:5px;">&emsp;</h>
-				</div>
-				<div class="project" id="project1">
-					<a href="recipe.html?id=4" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
-						<img src="images/fake_Spaghetti_and_Meatballs.png" alt="Test image" class="img">
-					</a>
-				</div>
-
-		    <div class="project" id="project2">
-					<a href="recipe.html?id=21" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
-						<img src="images/fake_Chicken_and_Broccoli.png" alt="Test image" class="img">
-					</a>
-				</div>
-
-		    <div class="project" id="project3">
-					<a href="recipe.html?id=22" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
-						<img src="images/fake_Lemon_Rosemary_Chicken.png" alt="Test image" class="img">
-					</a>
-				</div>
-
-		    <div class="project" id="project4">
-					<a href="recipe.html?id=23" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
-						<img src="images/fake_Cauliflower_Breadsticks.png" alt="Test image" class="img">
-					</a>
-				</div>
-
-		    <div class="project" id="project5">
-					<a href="recipe.html?id=24" class="thumbnail" style="padding:0px;background-color:white;border:0px;margin-bottom:5px;">
-						<img src="images/fake_Spicy_Buffalo_Tacos.png" alt="Test image" class="img">
-					</a>
-				</div>
+			<div style="background-color:white;" id="body">
 			</div>
 	  </div>
 	</div>
@@ -140,10 +108,20 @@
 	</script>
 
 	<script id="favorite-template" type="text/x-handlebars-template">
-		<div class="card">
+		<div class="card" style="margin-bottom:8px;">
 			<a href="recipe.html?id={{id}}" id="favorite_food">
 				<img src="{{pic}}" height="130" alt="p">
-				<p >{{name}}</p>
+				<p>{{name}}</p>
+			</a>
+		</div>
+	</script>
+
+	<script id="recommend-template" type="text/x-handlebars-template">
+		<div style="position: relative;text-align: center;color: white;" id="project{{id}}">
+			<a href="recipe.html?id={{id}}" class="thumbnail" style="width: 100%;height: 75px; overflow: hidden;margin-top:-7;">
+				<img src="{{pic}}" alt="Test image" class="img" style="width: 110%; height:300px; margin: -80px 0 0 0; opacity: 0.5;filter: alpha(opacity=50);">
+				<p style="position: absolute;top:50%;left: 50%; transform: translate(-50%, -50%); font-size:18px;color:black;line-height:1">{{name}}</p>
+				<p id="{{id}}" style="position: absolute;bottom: -6px;right: 10px;color:green;font-size:12px;">Calories: {{calories}}</p>
 			</a>
 		</div>
 	</script>
