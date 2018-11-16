@@ -31,7 +31,9 @@ $(document).ready(function() {
   }
   val = JSON.parse(localStorage.getItem('firstLogin'));
   if(val == "1"){
-    alert("Quick Start: \n- View your saved recipes on the homepage\n- Use 'cook' to find recipes based on ingredients you have\n- Use 'my kitchen' to keep track of what food you have\n- Use 'add food' to add new ingredients to your kitchen\n\nEnjoy!");
+    /*
+    alert("New user? \n- You can find instructions in 'help' of your 'Profile'\n");
+    */
     localStorage.setItem('firstLogin', JSON.stringify("0"));
   }
 })
