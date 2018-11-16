@@ -1,10 +1,10 @@
 chosenIng = JSON.parse(localStorage.getItem('currentIng'));
 var recipeData = JSON.parse(localStorage.getItem('recipeData'));
+var backAdd = JSON.parse(localStorage.getItem('address'));
 $(document).ready(function() {
   var queryParams = new URLSearchParams(window.location.search);
 	id = queryParams.get('id');
   add = queryParams.get('add');
-  var backAdd = JSON.parse(localStorage.getItem('address'));
   $("#back").attr("href", backAdd);
 
   if(id == 2){
@@ -43,27 +43,32 @@ $(document).ready(function() {
       }
     }
     localStorage.setItem('recipe_idx',JSON.stringify(recipe_idx));
+    console.log(recipe_idx);
     if(recipe_idx.length<1){
+      var parentDiv = $("#container");
+      parentDiv.empty();
       var div = document.createElement('div');
       div.setAttribute('class', 'container');
       div.innerHTML = "No recipe found, please try other ingredients.";
+      console.log(div);
       document.getElementById("container").appendChild(div);
       var div = document.createElement('div');
       div.setAttribute('class', 'container');
-      div.innerHTML = "<a id='back_button' href='cook1.html'>Go back</a>";
+      div.innerHTML = "<a id='back_button' href='"+backAdd+"'>Go back</a>";
       document.getElementById("container").appendChild(div);
-    }
+    }else{
 
-    var source = $('#recipe-template').html();
-    var template = Handlebars.compile(source);
-    var parentDiv = $("#container");
-    parentDiv.empty();
+      var source = $('#recipe-template').html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#container");
+      parentDiv.empty();
 
-    for(var i = 0; i < recipe_idx.length; i++){
-      var curData = recipeData[recipe_idx[i]];
-      var curHtml = template(curData);
-      parentDiv.append(curHtml);
-      document.getElementById(recipe_idx[i]).innerHTML="Match "+recipeList[recipe_idx[i]]+" ingredients";
+      for(var i = 0; i < recipe_idx.length; i++){
+        var curData = recipeData[recipe_idx[i]];
+        var curHtml = template(curData);
+        parentDiv.append(curHtml);
+        document.getElementById(recipe_idx[i]).innerHTML="Match "+recipeList[recipe_idx[i]]+" ingredients";
+      }
     }
   }
 })
@@ -72,32 +77,45 @@ $('#calories').click(byCalory())
 
 function byCalory(){
   var recipe_idx = JSON.parse(localStorage.getItem('recipe_idx'));
-  recipeCal = {}
-  for(var i = 0; i < recipe_idx.length; i++){
-    for(var j = 0; j < recipeData.length; j ++){
-      if(recipe_idx[i] == recipeData[j]['id']){
-        recipeCal[recipe_idx[i]] = recipeData[j]['calories']
+  if(recipe_idx.length<1){
+    var parentDiv = $("#container");
+    parentDiv.empty();
+    var div = document.createElement('div');
+    div.setAttribute('class', 'container');
+    div.innerHTML = "No recipe found, please try other ingredients.";
+    document.getElementById("container").appendChild(div);
+    var div = document.createElement('div');
+    div.setAttribute('class', 'container');
+    div.innerHTML = "<a id='back_button' href='"+backAdd+"'>Go back</a>";
+    document.getElementById("container").appendChild(div);
+  }else{
+    recipeCal = {}
+    for(var i = 0; i < recipe_idx.length; i++){
+      for(var j = 0; j < recipeData.length; j ++){
+        if(recipe_idx[i] == recipeData[j]['id']){
+          recipeCal[recipe_idx[i]] = recipeData[j]['calories']
+        }
       }
     }
-  }
-  var items = Object.keys(recipeCal).map(function(key) {
-    return [key, recipeCal[key]];
-  });
-  items.sort(function(first, second) {
-    return second[1] - first[1];
-  });
-  items = items.reverse();
-  console.log(items);
+    var items = Object.keys(recipeCal).map(function(key) {
+      return [key, recipeCal[key]];
+    });
+    items.sort(function(first, second) {
+      return second[1] - first[1];
+    });
+    items = items.reverse();
+    console.log(items);
 
-  var source = $('#recipe-template').html();
-  var template = Handlebars.compile(source);
-  var parentDiv = $("#container");
-  parentDiv.empty();
+    var source = $('#recipe-template').html();
+    var template = Handlebars.compile(source);
+    var parentDiv = $("#container");
+    parentDiv.empty();
 
-  for(var i = 0; i < items.length; i++){
-    var curData = recipeData[items[i][0]];
-    var curHtml = template(curData);
-    parentDiv.append(curHtml);
-    document.getElementById(items[i][0]).innerHTML="Calories: "+items[i][1];
+    for(var i = 0; i < items.length; i++){
+      var curData = recipeData[items[i][0]];
+      var curHtml = template(curData);
+      parentDiv.append(curHtml);
+      document.getElementById(items[i][0]).innerHTML="Calories: "+items[i][1];
+    }
   }
 }
