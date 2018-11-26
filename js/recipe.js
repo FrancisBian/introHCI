@@ -2,6 +2,7 @@
 var recipeID = -1;
 favList = JSON.parse(localStorage.getItem('favData'));
 var recipeData = JSON.parse(localStorage.getItem('recipeData'));
+var backAdd = JSON.parse(localStorage.getItem('address'));
 $(document).ready(function() {
 	var queryParams = new URLSearchParams(window.location.search);
 	recipeID = queryParams.get('id');
@@ -27,6 +28,11 @@ $(document).ready(function() {
 			console.log("Find this in favorite");
 		}
 	}
+	if(backAdd == "homepage.html"){
+		console.log(backAdd);
+		$("#back").attr("href", backAdd);
+	}
+
 })
 
 $(".star.glyphicon").click(function() {

@@ -36,6 +36,7 @@ $(document).ready(function() {
     */
     localStorage.setItem('firstLogin', JSON.stringify("0"));
   }
+  localStorage.setItem('address',JSON.stringify("homepage.html"));
 })
 
 function getRandomInt(max) {
