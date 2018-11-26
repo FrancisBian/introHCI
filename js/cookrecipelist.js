@@ -6,6 +6,7 @@ $(document).ready(function() {
 	id = queryParams.get('id');
   add = queryParams.get('add');
   $("#back").attr("href", backAdd);
+  console.log(backAdd);
 
   if(id == 2){
     byCalory();

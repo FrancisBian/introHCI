@@ -89,13 +89,13 @@
 				if (document.getElementById("ingr"+i)!=null) {
 					if (document.getElementById("ingr"+i).value != "") {
 						var ingredient = document.getElementById("ingr"+i).value;
-						currentIng.push(ingredient)
+						currentIng.push(ingredient.toLowerCase())
 					}
 				}
 			}
 
 			if(currentIng.length == 0){
-				alert("Please choose at least one ingredient!");
+				alert("Please type at least one ingredient!");
 			}
 			else{
 				window.location.href = "cookrecipelist.html";
