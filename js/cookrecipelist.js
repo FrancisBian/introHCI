@@ -70,11 +70,11 @@ $(document).ready(function() {
         parentDiv.append(curHtml);
         document.getElementById(recipe_idx[i]).innerHTML="Match "+recipeList[recipe_idx[i]]+" ingredients";
       }
+      var x = document.getElementById("snackbar");
+        x.innerHTML = "Filter recipes by ingredients matched.";
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
-    var x = document.getElementById("snackbar");
-      x.innerHTML = "Filter recipes by ingredients matched.";
-      x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 })
 
