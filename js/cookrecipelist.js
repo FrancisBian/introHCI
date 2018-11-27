@@ -71,6 +71,10 @@ $(document).ready(function() {
         document.getElementById(recipe_idx[i]).innerHTML="Match "+recipeList[recipe_idx[i]]+" ingredients";
       }
     }
+    var x = document.getElementById("snackbar");
+      x.innerHTML = "Filter recipes by ingredients matched.";
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 })
 
@@ -117,6 +121,11 @@ function byCalory(){
       var curHtml = template(curData);
       parentDiv.append(curHtml);
       document.getElementById(items[i][0]).innerHTML="Calories: "+items[i][1];
+      document.getElementById(items[i][0]).style="position: absolute;bottom: -6px;right: 10px;color:black; font-weight: bold; opacity: 0.8; font-size:12px;";
     }
+    var x = document.getElementById("snackbar");
+      x.innerHTML = "Filter recipes by Calories.";
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
   }
 }

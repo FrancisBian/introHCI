@@ -1,4 +1,5 @@
 // Call this function when the page loads (the jQuery "ready" event)
+var backAdd = JSON.parse(localStorage.getItem('address'));
 $(document).ready(function() {
   var source = $('#list-template').html();
   var template = Handlebars.compile(source);
@@ -12,10 +13,24 @@ $(document).ready(function() {
     for(var j = 0; j < curData['items'].length; j++){
       var div = document.createElement('div');
       div.setAttribute('class', 'item');
-      div.innerHTML = "<input type='checkbox' id='box' style='margin-top:15px;margin-left:15px;margin-bottom:15px;margin-right:10px;'>"+curData['items'][j]+"<br>";
+      div.innerHTML = "<input type='checkbox' id='box' style='margin-top:15px;margin-left:15px;margin-bottom:15px;margin-right:10px;'><t>"+curData['items'][j]+"</t>";
       document.getElementById("collapse"+i).appendChild(div);
     }
   }
+
+  var queryParams = new URLSearchParams(window.location.search);
+  chosenIng = queryParams.get('var');
+  $('.item').each(function(){
+    item = this.getElementsByTagName("t")[0].textContent;
+    if(chosenIng == item){
+      this.children[0].checked=true;
+    }
+  })
+
+  if(backAdd == "mykitchen2.html"){
+		console.log(backAdd);
+		$("#back").attr("href", backAdd);
+	}
 })
 
 
