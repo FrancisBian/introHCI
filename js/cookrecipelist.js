@@ -126,6 +126,6 @@ function byCalory(){
     var x = document.getElementById("snackbar");
       x.innerHTML = "Filter recipes by Calories.";
       x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 }
