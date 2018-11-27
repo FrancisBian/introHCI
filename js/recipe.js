@@ -12,11 +12,16 @@ $(document).ready(function() {
 		if(curData.id == recipeID){
 			document.getElementById("recipeimg").src=curData.pic;
 			document.getElementById("recipeName").textContent=curData.name;
-			document.getElementById("ingredient1").textContent=curData.ingredients[0];
-			document.getElementById("ingredient2").textContent=curData.ingredients[1];
-			document.getElementById("ingredient3").textContent=curData.ingredients[2];
-			document.getElementById("instruction").textContent=curData.instructions;
-			document.getElementById("categories").textContent=curData.category;
+			for( var j = 0; j < curData.ingredients.length; j++){
+				var div = document.createElement('div');
+	      div.innerHTML = j+1+") "+curData.ingredients[j]+";";
+	      document.getElementById("ingredients").appendChild(div);
+			}
+			for( var k = 0; k < curData.instructions.length; k++){
+				var div = document.createElement('div');
+	      div.innerHTML = curData.instructions[k];
+	      document.getElementById("instruction").appendChild(div);
+			}
 			document.getElementById("calories").textContent="Calories: "+curData.calories;
 			document.getElementById("servingSize").textContent="Serving size: "+curData.servingSize;
 		}
