@@ -24,6 +24,7 @@ $(document).ready(function() {
 			}
 			document.getElementById("calories").textContent="Calories: "+curData.calories;
 			document.getElementById("servingSize").textContent="Serving size: "+curData.servingSize;
+			document.getElementById("time").textContent="Time: "+curData.time+"min";
 		}
 	}
 
