@@ -6,11 +6,12 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/prototype.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Quicksand:300,400" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 </head>
 
 
-<body>
+<body style="font-family: 'Quicksand', sans-serif; font-weight: 400 bolder; color: #000000;">
   <!--This is the fixed top-->
   <div class="navbar_top">
 		<a href="javascript:history.go(-1)" id="back"><img src="images/arrow.png" height="20" alt="p"></a>
@@ -39,7 +40,7 @@
 
   <div class="main">
     <!--Recipe page title-->
-		<div class="btn-group btn-group-justified" style="">
+		<div class="btn-group btn-group-justified">
 			<a href="cookrecipelist.html" class="btn btn-primary">By ingredients</a>
 			<a href="cookrecipelist.html?id=2" class="btn btn-primary" style="z-index:0;" id="calories">By calories</a>
 			<a href="cookrecipelist.html?id=3" class="btn btn-primary" style="z-index:0;" id="time">By time</a>
@@ -55,9 +56,9 @@
 	<script id="recipe-template" type="text/x-handlebars-template">
 		<div style="position: relative;text-align: center;color: white;">
 			<a href="recipe.html?id={{id}}" class="thumbnail" style="width: 100%;height: 75px; overflow: hidden;">
-				<img src="{{pic}}" alt="Test image" class="img" style="width: 110%; height:300px; margin: -80px 0 0 0; opacity: 0.6;filter: alpha(opacity=50);">
-				<p style="position: absolute;top:50%;left: 50%; transform: translate(-50%, -50%); font-size:20px;font-style: italic;color:black;line-height:1">{{name}}</p>
-				<p id="{{id}}" style="position: absolute;bottom: -6px;left: 10px;color:black; font-weight: bold; opacity: 0.8; font-size:12px;">here</p>
+				<img src="{{pic}}" alt="Test image" class="img" style="width: 110%; height:300px; margin: -80px 0 0 0; opacity: 0.4;filter: alpha(opacity=50);">
+				<p style="position: absolute;top:50%;left: 50%; transform: translate(-50%, -50%); font-size:20px;font-style: 400 bolder;color:black;line-height:1">{{name}}</p>
+				<p id="{{id}}" style="position: absolute;bottom: -6px;left: 10px;color:black; font-weight: bolder; opacity: 1; font-size:12px;">here</p>
 			</a>
 		</div>
 	</script>
