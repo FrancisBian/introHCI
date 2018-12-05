@@ -52,3 +52,24 @@ $('#make_button').click(function(){
   localStorage.setItem('recipe_idx',JSON.stringify([]));
   localStorage.setItem('currentIng',JSON.stringify(stringArr));
 })
+
+
+$('#chooseAll').click(function(){
+  console.log(document.getElementById("chooseAll").checked);
+  if(!document.getElementById("chooseAll").checked){
+    $('.item').each(function(){
+      var checked = this.children[0].checked;
+      if(checked){
+        this.children[0].checked = false;
+      }
+    })
+  }
+  else{
+    $('.item').each(function(){
+      var checked = this.children[0].checked;
+      if(!checked){
+        this.children[0].checked = true;
+      }
+    })
+  }
+})

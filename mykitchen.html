@@ -43,8 +43,12 @@
     <div class="container">
     	<div class="row" id="row">
 				<div class="btn-group btn-group-justified">
+					<!--
 			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:white;border-width:0.5;" onclick="collapse()" id="category">category</a>
 			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:#8eaf9d;border-width:0.5;" onclick="viewAll()" style="z-index:0;" id="viewall">view all</a>
+					-->
+					<a href="#" class="btn btn-primary" style="background:#CBCACA; color:black; border-color:transparent" onclick="collapse()" id="category">category</a>
+			  	<a href="#" class="btn btn-primary" style="background:#F1F1F1; color:black; border-color:transparent" onclick="viewAll()" style="z-index:0;" id="viewall">view all</a>
 				</div>
 
 			</div>
@@ -73,8 +77,12 @@
 			$('div[id^="collapse"]').filter(function(){
 				this.className = "panel-collapse collapse in";
 			})
+			/*
 			document.getElementById("viewall").style["border-color"] = "white";
 			document.getElementById("category").style["border-color"] = "#8eaf9d";
+			*/
+			document.getElementById("viewall").style["background"] = "#CBCACA";
+			document.getElementById("category").style["background"] = "#F1F1F1";
 			document.getElementById("viewall").style["z-index"] = 0;
 		}
 
@@ -82,8 +90,12 @@
 			$('div[id^="collapse"]').filter(function(){
 				this.className = "panel-collapse collapse";
 			})
+			/*
 			document.getElementById("category").style["border-color"] = "white";
 			document.getElementById("viewall").style["border-color"] = "#8eaf9d";
+			*/
+			document.getElementById("viewall").style["background"] = "#F1F1F1";
+			document.getElementById("category").style["background"] = "#CBCACA";
 		}
 	</script>
 
