@@ -1,6 +1,7 @@
 chosenIng = JSON.parse(localStorage.getItem('currentIng'));
 var recipeData = JSON.parse(localStorage.getItem('recipeData'));
 var backAdd = JSON.parse(localStorage.getItem('address'));
+var id = 0;
 $(document).ready(function() {
   var queryParams = new URLSearchParams(window.location.search);
 	id = queryParams.get('id');
@@ -15,6 +16,7 @@ $(document).ready(function() {
     byTime();
   }
   else{
+    document.getElementById("ingredient").style["border-color"] = "white";
     console.log(chosenIng);
     var dict = {};
     for(var i = 0; i < recipeData.length; i ++){
@@ -74,9 +76,9 @@ $(document).ready(function() {
         document.getElementById(recipe_idx[i]).innerHTML="Match "+recipeList[recipe_idx[i]]+" ingredients";
       }
       var x = document.getElementById("snackbar");
-        x.innerHTML = "Filter recipes by ingredients matched.";
-        x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      x.innerHTML = "Filter recipes by ingredients matched.";
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
   }
 })
@@ -84,6 +86,9 @@ $(document).ready(function() {
 $('#calories').click(byCalory())
 
 function byCalory(){
+  if(id == 2){
+    document.getElementById("calories").style["border-color"] = "white";
+  }
   var recipe_idx = JSON.parse(localStorage.getItem('recipe_idx'));
   if(recipe_idx.length<1){
     var parentDiv = $("#container");
@@ -127,15 +132,18 @@ function byCalory(){
       document.getElementById(items[i][0]).style="position: absolute;bottom: -6px;left: 40%;color:black; font-weight: bold; opacity: 0.8; font-size:12px;";
     }
     var x = document.getElementById("snackbar");
-      x.innerHTML = "Filter recipes by Calories.";
-      x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    x.innerHTML = "Filter recipes by Calories.";
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 }
 
 
 $('#time').click(byTime())
 function byTime(){
+  if(id == 3){
+    document.getElementById("time").style["border-color"] = "white";
+  }
   var recipe_idx = JSON.parse(localStorage.getItem('recipe_idx'));
   if(recipe_idx.length<1){
     var parentDiv = $("#container");
@@ -178,9 +186,10 @@ function byTime(){
       document.getElementById(items[i][0]).innerHTML="Cooking time: "+items[i][1]+" min";
       document.getElementById(items[i][0]).style="position: absolute;bottom: -6px;right: 10px;color:black; font-weight: bold; opacity: 0.8; font-size:12px;";
     }
+    console.log(recipe_idx+"here");
     var x = document.getElementById("snackbar");
-      x.innerHTML = "Filter recipes by cooking time.";
-      x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    x.innerHTML = "Filter recipes by cooking time.";
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 }

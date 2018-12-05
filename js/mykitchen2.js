@@ -21,13 +21,19 @@ $(document).ready(function() {
     var ss = $(this).val();
     var item = this.parentNode.getElementsByTagName("t")[0].textContent;
     this.parentNode.remove();
+    var deleted = '';
     for(var i = 0; i < myKitchen.length; i++){
       var curData = myKitchen[i];
       var index = curData['items'].indexOf(item);
       if (index > -1) {
+        deleted = curData['items'][index]
         curData['items'].splice(index, 1);
       }
     }
+    var x = document.getElementById("snackbar");
+    x.innerHTML = "Deleted item "+ deleted;
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
     /*$(this).parent().remove();*/
   });

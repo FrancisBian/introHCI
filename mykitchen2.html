@@ -43,12 +43,13 @@
     <div class="container">
     	<div class="row" id="row">
 				<div class="btn-group btn-group-justified">
-			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:white;border-width:0.5;" onclick="collapse()">category</a>
-			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:white;border-width:0.5;" onclick="viewAll()" style="z-index:0;">view all</a>
+			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:white;border-width:0.5;" onclick="collapse()" id="category">category</a>
+			  	<a href="#" class="btn btn-primary" style="background:grey; border-color:#8eaf9d;border-width:0.5;" onclick="viewAll()" style="z-index:0;" id="viewall">view all</a>
 				</div>
 
 			</div>
 		</div>
+		<div id="snackbar">Filter recipes by ingredients matched.</div>
 	</div>
 
 
@@ -72,12 +73,16 @@
 			$('div[id^="collapse"]').filter(function(){
 				this.className = "panel-collapse collapse in";
 			})
+			document.getElementById("viewall").style["border-color"] = "white";
+			document.getElementById("category").style["border-color"] = "#8eaf9d";
 		}
 
 		function collapse(){
 			$('div[id^="collapse"]').filter(function(){
 				this.className = "panel-collapse collapse";
 			})
+			document.getElementById("category").style["border-color"] = "white";
+			document.getElementById("viewall").style["border-color"] = "#8eaf9d";
 		}
 	</script>
 

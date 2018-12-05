@@ -49,5 +49,6 @@ $('#make_button').click(function(){
     window.location.href = "cookrecipelist.html";
     localStorage.setItem('address',JSON.stringify("cookusekitchenfood.html"));
   }
+  localStorage.setItem('recipe_idx',JSON.stringify([]));
   localStorage.setItem('currentIng',JSON.stringify(stringArr));
 })
