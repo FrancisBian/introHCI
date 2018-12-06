@@ -77,10 +77,11 @@
 					<img src="images/add button.png" style="width:80%;" alt="add" onclick="addItem()">
 				</div>
 		-->
-				<div class="row text-center	" style="margin: 0 auto; text-align:center;">
-					<a style="width: 85%;" type="submit" id="submit" class="btn btn-default" onclick="addItem();">add to my kitchen
-					</a>
-				</div>
+		<div class="row text-center	" style="margin: 0 auto; text-align:center;">
+			<a style="width: 85%;" type="submit" id="submit" class="btn btn-default" onclick="addItem();">add to my kitchen
+			</a>
+		</div>
+		<div id="snackbar">Filter recipes by ingredients matched.</div>
 
   </div>
 
@@ -89,7 +90,10 @@
 			var catlg = document.getElementById('select').value;
 			var ingredient = document.getElementById('ing').value;
 			if(ingredient==''){
-				alert("You added nothing! Please enter your new ingredient");
+				var x = document.getElementById("snackbar");
+		    x.innerHTML = "You added nothing! Please enter your new ingredient.";
+		    x.className = "show";
+		    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 				return;
 			}
 			var myKitchen = JSON.parse(localStorage.getItem('myKitchen'));
@@ -97,7 +101,10 @@
 			var check = 1;
 			for(var i = 0; i < myKitchen.length; i++){
 				if(myKitchen[i]['items'].indexOf(ingredient.toLowerCase()) > -1){
-					alert("Already have this item in your kitchen!");
+					var x = document.getElementById("snackbar");
+			    x.innerHTML = "Already have this item in your kitchen.";
+			    x.className = "show";
+			    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 					document.getElementById('ing').value = '';
 					check = 0;
 					break;
@@ -111,7 +118,10 @@
 						}
 						else{
 							myKitchen[i]['items'].push(ingredient.toLowerCase());
-							alert("Successfully added " + ingredient.toLowerCase()+"!");
+							var x = document.getElementById("snackbar");
+					    x.innerHTML = "Successfully added " + ingredient.toLowerCase()+"!";
+					    x.className = "show";
+					    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 							document.getElementById('ing').value = '';
 							localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
 						}
@@ -123,7 +133,10 @@
 
 		function scan(){
 			document.getElementById("ing").value = "peach";
-			alert("Successfully scanned peach");
+			var x = document.getElementById("snackbar");
+			x.innerHTML = "Successfully scanned Peach.";
+			x.className = "show";
+			setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 		}
 
 	</script>
