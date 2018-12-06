@@ -60,6 +60,7 @@
 							  <option value="Protein">Protein</option>
 							  <option value="Vegetables">Vegetables</option>
 							  <option value="Diary">Diary</option>
+								<option value="Oil">Oil</option>
 								<option value="Others">Others</option>
 							</select>
 						</p>
@@ -93,19 +94,30 @@
 			}
 			var myKitchen = JSON.parse(localStorage.getItem('myKitchen'));
 		  console.log(myKitchen);
+			var check = 1;
 			for(var i = 0; i < myKitchen.length; i++){
-				if(catlg == myKitchen[i]['category']){
-					if(myKitchen[i]['items'].indexOf(ingredient.toLowerCase()) > -1){
-						alert("Already have this item in your kitchen!");
-						document.getElementById('ing').value = '';
-					}
-					else{
-						myKitchen[i]['items'].push(ingredient.toLowerCase());
-						alert("Successfully added " + ingredient.toLowerCase()+"!");
-						localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
+				if(myKitchen[i]['items'].indexOf(ingredient.toLowerCase()) > -1){
+					alert("Already have this item in your kitchen!");
+					document.getElementById('ing').value = '';
+					check = 0;
+					break;
+				}
+			}
+			if(check == 1){
+				for(var i = 0; i < myKitchen.length; i++){
+					if(catlg == myKitchen[i]['category']){
+						if(myKitchen[i]['items'].indexOf(ingredient.toLowerCase()) > -1){
+							document.getElementById('ing').value = '';
+						}
+						else{
+							myKitchen[i]['items'].push(ingredient.toLowerCase());
+							alert("Successfully added " + ingredient.toLowerCase()+"!");
+							localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
+						}
 					}
 				}
 			}
+
 		}
 
 		function scan(){
