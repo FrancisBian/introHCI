@@ -75,5 +75,8 @@ function loginFunction() {
     localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
     localStorage.setItem('recipeData', JSON.stringify(recipeData));
     localStorage.setItem('firstLogin', JSON.stringify("1"));
-    window.location = "homepage.html?";
+    $('#b').fadeOut(1000, function(){
+      window.location = "homepage.html?";
+    });
+    /*window.location = "homepage.html?";*/
 }
