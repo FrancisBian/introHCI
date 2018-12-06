@@ -1,4 +1,4 @@
-chosenIng = JSON.parse(localStorage.getItem('currentIng'));
+var chosenIng = JSON.parse(localStorage.getItem('currentIng'));
 var recipeData = JSON.parse(localStorage.getItem('recipeData'));
 var backAdd = JSON.parse(localStorage.getItem('address'));
 var id = 0;
@@ -16,7 +16,9 @@ $(document).ready(function() {
     byTime();
   }
   else{
-    document.getElementById("ingredient").style["border-color"] = "white";
+    document.getElementById("ingredient").style["background"] = "#CBCACA";
+    document.getElementById("calories").style["background"] = "#F1F1F1";
+    document.getElementById("time").style["background"] = "#F1F1F1";
     console.log(chosenIng);
     var dict = {};
     for(var i = 0; i < recipeData.length; i ++){
@@ -87,7 +89,9 @@ $('#calories').click(byCalory())
 
 function byCalory(){
   if(id == 2){
-    document.getElementById("calories").style["border-color"] = "white";
+    document.getElementById("ingredient").style["background"] = "#F1F1F1";
+    document.getElementById("calories").style["background"] = "#CBCACA";
+    document.getElementById("time").style["background"] = "#F1F1F1";
   }
   var recipe_idx = JSON.parse(localStorage.getItem('recipe_idx'));
   if(recipe_idx.length<1){
@@ -142,7 +146,9 @@ function byCalory(){
 $('#time').click(byTime())
 function byTime(){
   if(id == 3){
-    document.getElementById("time").style["border-color"] = "white";
+    document.getElementById("ingredient").style["background"] = "#F1F1F1";
+    document.getElementById("calories").style["background"] = "#F1F1F1";
+    document.getElementById("time").style["background"] = "#CBCACA";
   }
   var recipe_idx = JSON.parse(localStorage.getItem('recipe_idx'));
   if(recipe_idx.length<1){
