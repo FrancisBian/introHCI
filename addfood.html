@@ -112,6 +112,7 @@
 						else{
 							myKitchen[i]['items'].push(ingredient.toLowerCase());
 							alert("Successfully added " + ingredient.toLowerCase()+"!");
+							document.getElementById('ing').value = '';
 							localStorage.setItem('myKitchen',JSON.stringify(myKitchen));
 						}
 					}
