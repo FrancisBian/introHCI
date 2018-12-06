@@ -94,6 +94,7 @@
 			<t><button onclick = "submit()" style="margin-left: 15px; display:block; width:80%;"> select </button></t>
 
 		</div>
+		<div id="snackbar">Filter recipes by ingredients matched.</div>
 	</div>
 
   <!-- include JavaScript near the end of the HTML file -->
@@ -115,7 +116,10 @@
 			dim(false);
 		}
 		function submit() {
-			alert("Successfully shared!");
+			var x = document.getElementById("snackbar");
+			x.innerHTML = "Successfully shared";
+			x.className = "show";
+			setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 			closeNav();
 		}
 	</script>
